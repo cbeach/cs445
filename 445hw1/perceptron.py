@@ -2,7 +2,7 @@
 
 import csv
 import random
-import numpy 
+from numpy import *
 import scipy
 
 class perceptron:
@@ -10,7 +10,6 @@ class perceptron:
     learning_rate = 0.2
     features = 64
     training_set = []
-    training_set_array = None
     training_class = []
     weights = []
 
@@ -34,7 +33,7 @@ class perceptron:
         for i in temp_ints:
             self.training_class.append(i[-1])
             i[-1] = 1 
-    
+        self.training_set = array(self.training_set) 
     def cost_function(self, x, y):
         return 1/2 * (x-y) * (x-y)
     
@@ -45,7 +44,7 @@ class perceptron:
         return array(training_set)
     
     def compute():
-               
+        pass 
 
 
 
