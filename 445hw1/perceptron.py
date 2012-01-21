@@ -50,7 +50,10 @@ class perceptron:
     def compute(self, instance):
         prediction = 0
         total = 0
-        for i in range(0, self.features + 1):
+        for i in range(64):
+            #import pdb; pdb.set_trace()
+            print(len(instance), len(self.weights), i)
+            print(self.weights)
             total = total + (instance[i] * self.weights[i])
         return total
 
