@@ -9,80 +9,105 @@ class perceptron:
     
     learning_rate = 0.2
     features = 64
-    weights = []
     target_digit = 2
+    positive_examples = []
+    negative_examples = []
 
-    def __init__(self, learning_rate, feature_count, file_name):
+    def __init__(self, learning_rate, feature_count, compared_digit):
         random.seed()
-
+        self.compared_digit = compared_digit
         self.learning_rate = learning_rate
         self.feature = feature_count
-        self.get_training_data(file_name)
-        for i in range(10):
-            self.weights.append([(random.random() * 2) - 1 for i in range(0,feature_count+1)])
+
+        self.weights = [(random.random() * 2) - 1 for i in range(0,feature_count+1)]
          
-    def get_training_data(self, file_name):
-        file_reader = csv.reader(open(file_name, 'r'))
-        temp_val = []
-        for i in file_reader:
-            temp_val.append(i)
+    def set_training_data(self, training_data):
+        for i in training_data:
+            
+            if i[-1] == self.target_digit:
+                i[-1] = 1
+                self.positive_examples.append(i)
+            elif i[-1] == self.compared_digit:
+                i[-1] = 1
+                self.negative_examples.append(i)
 
-        temp_ints = [map(int, i) for i in temp_val]
-        
-        self.training_set = temp_ints
-
-        temp_class_list = []
-        for i in temp_ints:
-            temp_class_list.append(i[-1])
-            i[-1] = 1 
-        self.training_class = temp_class_list
-
-    def cost_function(self, x, y):
-        return 1/2 * (x-y) * (x-y)
-    
-    def gradient_step(self, cost):
-        pass
-
-    def make_array(self, x, y):
-        return array(training_set)
-    
-    def compute(self, instance, digit_value):
-        return sum([instance[i] * self.weights[digit_value][i] for i in range(65)])
+    def compute(self, instance):
+        total = 0
+        for i in range(len(instance)):
+            total = total + instance[i] * self.weights[i]
+        return total
 
     def train(self):
-        
-        true_positive = [0 for i in range(10)]
-        true_negative = 0  #should I keep trank of all of these with a list?
-        false_positive = [0 for i in range(10)]
-        false_negative = 0
+        for i in range(100):
+            self.epoch()
 
-        for i in range(100): #range(len(self.training_set)):
-            #print("Training on example ", i)
-            #import pdb; pdb.set_trace()
-            if self.training_class[i] == self.target_digit:  #itterate over all examples
-                for j in range(10):  #itterate over all perceptrons
-                    if j == self.target_digit:  #toss out 2 vs. 2
-                        continue
-                    result = self.compute(self.training_set[i],j)
-                    if result < 0:
-                        self.adjust_weights(j, 1, result, self.training_set[i])
-                        false_positive[j] = false_positive[j] + 1
-                    else:
-                        true_positive[j] = true_positive[j] + 1
+    def epoch(self):
+        confusion = [0,0,0,0] #tp,tn,fp,fn
+        for i in self.positive_examples:
+            result = self.compute(i)
+            if result < 0:
+                confusion[3] = confusion[3] + 1
+                self.adjust_weights(1, -1, i)
             else:
-                result = self.compute(self.training_set[i], self.training_class[i])
-                if result > 0:
-                    self.adjust_weights(self.training_class[i], 1, result, self.training_set[i])
-                    false_negative = false_negative + 1
-                else:
-                    true_negative = true_negative + 1 
-        return (true_positive, true_negative, false_positive, false_negative)
+                confusion[0] = confusion[0] + 1
+        
+        for i in self.negative_examples:
+            result = self.compute(i)
+            if result > 0:
+                confusion[2] = confusion[2] + 1
+                self.adjust_weights(-1, 1, i)
+            else:
+                confusion[1] = confusion[1] + 1
+        print(confusion)
+            
 
-    def adjust_weights(self, digit_class, expected_output, actual_output, training_example):
-        for i in self.weights[digit_class]:
-            i = [self.learning_rate * (expected_output - actual_output) * training_example[j] for j in range(65)]
+    def adjust_weights(self, expected_output, actual_output, training_example):
+        for i in range(len(self.weights)):
+            delta = (self.learning_rate * (expected_output - actual_output) * training_example[i])
+            self.weights[i] = self.weights[i] + delta
 
+    def test_compute(self):
+        for i in range(len(self.training_set)):
+            print(self.compute(self.training_set[i], self.training_class[i]))
+
+#End class perceptron  **********************************
+
+def get_testing_data(self, file_name):
+    file_reader = csv.reader(open(file_name, 'r'))
+    temp_val = []
+    for i in file_reader:
+        temp_val.append(i)
+
+    temp_ints = [map(int, i) for i in temp_val]
+    self.testing_set = temp_ints
+
+    temp_class_list = []
+    for i in temp_ints:
+        temp_class_list.append(i[-1])
+        i[-1] = 1 
+    self.testing_class = temp_class_list
+
+def get_training_data(file_name):
+    file_reader = csv.reader(open(file_name, 'r'))
+    temp_val = []
     
+    for i in file_reader:
+        temp_val.append(i)
+
+    temp_training_data = [map(float, i) for i in temp_val]
+    return temp_training_data
+
+
 if __name__ == "__main__":
-    per = perceptron(0.2, 64, "optdigits.tra")
-    print(per.train())
+    #per = [perceptron(0.2, 64, i) for i in range(10)]
+    training_data = get_training_data("optdigits.tra")
+
+    per = perceptron(0.0002,64,1)
+    per.set_training_data(training_data)
+    per.train()
+    #for i in per:
+    #    i.train()
+    #results = per.test()
+
+    #print(results)
+    #print(sum(sum(i) for i in results))
