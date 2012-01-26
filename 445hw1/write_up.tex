@@ -1,0 +1,708 @@
+
+\title{Machine Learning: cs445 \\ Homework 1}
+\author{
+        Casey Beach \\
+}
+\date{\today}
+
+\documentclass[12pt]{article}
+	\usepackage[table]{xcolor}
+    \usepackage{setspace}
+    \usepackage{multirow}
+	\usepackage{url}
+	\usepackage{amsfonts}
+	\usepackage{graphicx}
+	\usepackage{sgame,color}
+	\usepackage{egame}
+	\usepackage{multicol}
+    \doublespacing
+\begin{document}
+	\maketitle
+	\section*{Experiment 1}
+		\begin{tabular}{ | c || r | r | r |}
+			\hline
+			Perceptron & Epochs & Test Accuracy \\
+			\hline
+			9 vs 0 & 2& 90.223464 \\ 
+			9 vs 1 & 3& 85.635359 \\ 
+			9 vs 2 & 3& 99.719888 \\ 
+			9 vs 3 & 3& 99.173554 \\ 
+			9 vs 4 & 2& 92.243767 \\ 
+			9 vs 5 & 2& 94.751381 \\ 
+			9 vs 6 & 2& 100.000000 \\ 
+			9 vs 7 & 2& 97.214485 \\ 
+			9 vs 8 & 2& 95.197740 \\ 
+			\hline
+		\end{tabular}
+		\newline
+		\newline
+		\newline
+
+		\begin{multicols}{3}		
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 0 \\ 
+				\hline
+				9 & 180 & 0 \\ 
+				\hline
+				0 & 0 & 178 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 1 \\ 
+				\hline
+				9 & 180 & 0 \\ 
+				\hline
+				11 & 0 & 182 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 2 \\ 
+				\hline
+				9 & 180 & 0 \\ 
+				\hline
+				2 & 0 & 177 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 3 \\ 
+				\hline
+				9 & 179 & 2 \\ 
+				\hline
+				3 & 1 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 4 \\ 
+				\hline
+				9 & 133 & 0 \\ 
+				\hline
+				4 & 47 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 5 \\ 
+				\hline
+				9 & 103 & 0 \\ 
+				\hline
+				5 & 77 & 182 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 6 \\ 
+				\hline
+				9 & 179 & 0 \\ 
+				\hline
+				6 & 1 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 7 \\ 
+				\hline
+				9 & 179 & 11 \\ 
+				\hline
+				7 & 1 & 168 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 8 \\ 
+				\hline
+				9 & 179 & 13 \\ 
+				\hline
+				8 & 1 & 161 \\ 
+				\hline
+			\end{tabular}
+			\newline
+		\end{multicols}
+		\pagebreak
+    \section*{Experiment 2}
+
+		\begin{tabular}{ | c || r | r | r |}
+			\hline
+			 Perceptron & Epochs & Testing Accuracy \\ 
+			 9 vs 0 & 100 & 100 \\ 
+			\hline
+			 9 vs 1 & 100 & 77 \\ 
+			\hline
+			 9 vs 2 & 100 & 100 \\ 
+			\hline
+			 9 vs 3 & 100 & 93 \\ 
+			\hline
+			 9 vs 4 & 100 & 94 \\ 
+			\hline
+			 9 vs 5 & 100 & 95 \\ 
+			\hline
+			 9 vs 6 & 100 & 99 \\ 
+			\hline
+			 9 vs 7 & 100 & 93 \\ 
+			\hline
+			 9 vs 8 & 100 & 92 \\ 
+			\hline
+			 9 vs 9 & 100 & 100 \\ 
+			\hline
+		\end{tabular}
+
+
+		\begin{multicols}{3}
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 0 \\ 
+				\hline
+				9 & 180 & 0 \\ 
+				\hline
+				0 & 0 & 178 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 1 \\ 
+				\hline
+				9 & 180 & 82 \\ 
+				\hline
+				1 & 0 & 100 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 2 \\ 
+				\hline
+				9 & 180 & 0 \\ 
+				\hline
+				2 & 0 & 177 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 3 \\ 
+				\hline
+				9 & 156 & 0 \\ 
+				\hline
+				3 & 24 & 183 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 4 \\ 
+				\hline
+				9 & 159 & 0 \\ 
+				\hline
+				4 & 21 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 5 \\ 
+				\hline
+				9 & 179 & 15 \\ 
+				\hline
+				5 & 1 & 167 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 6 \\ 
+				\hline
+				9 & 179 & 0 \\ 
+				\hline
+				6 & 1 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 7 \\ 
+				\hline
+				9 & 180 & 23 \\ 
+				\hline
+				7 & 0 & 156 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 8 \\ 
+				\hline
+				9 & 153 & 0 \\ 
+				\hline
+				8 & 27 & 174 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+        \end{multicols}
+        There is a slight difference in the accuracy for the first and second experiments.  Most notably, the accuracy for the 9 vs. 1 perceptron dropped from 90
+        to 77.  I originally tried overtraining with 6 epochs, with is twice the max from experiment 1.  Double the epochs had no noticible affect on the output.
+    \pagebreak
+    \section*{Experiment 3}
+
+		\begin{tabular}{ | c || r | r | r |}
+			\hline
+			 Perceptron & Epochs & Testing Accuracy \\ 
+			 9 vs 0 & 1 & 75 \\ 
+			\hline
+			 9 vs 1 & 1 & 98 \\ 
+			\hline
+			 9 vs 2 & 1 & 99 \\ 
+			\hline
+			 9 vs 3 & 1 & 95 \\ 
+			\hline
+			 9 vs 4 & 1 & 91 \\ 
+			\hline
+			 9 vs 5 & 1 & 88 \\ 
+			\hline
+			 9 vs 6 & 1 & 99 \\ 
+			\hline
+			 9 vs 7 & 1 & 97 \\ 
+			\hline
+			 9 vs 8 & 1 & 96 \\ 
+			\hline
+			 9 vs 9 & 1 & 98 \\ 
+			\hline
+		\end{tabular}
+
+
+		\begin{multicols}{3}
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 0 \\ 
+				\hline
+				9 & 91 & 0 \\ 
+				\hline
+				0 & 89 & 178 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 1 \\ 
+				\hline
+				9 & 179 & 5 \\ 
+				\hline
+				1 & 1 & 177 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 2 \\ 
+				\hline
+				9 & 180 & 1 \\ 
+				\hline
+				2 & 0 & 176 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 3 \\ 
+				\hline
+				9 & 163 & 0 \\ 
+				\hline
+				3 & 17 & 183 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 4 \\ 
+				\hline
+				9 & 150 & 0 \\ 
+				\hline
+				4 & 30 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 5 \\ 
+				\hline
+				9 & 139 & 0 \\ 
+				\hline
+				5 & 41 & 182 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 6 \\ 
+				\hline
+				9 & 177 & 0 \\ 
+				\hline
+				6 & 3 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 7 \\ 
+				\hline
+				9 & 178 & 6 \\ 
+				\hline
+				7 & 2 & 173 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 8 \\ 
+				\hline
+				9 & 177 & 10 \\ 
+				\hline
+				8 & 3 & 164 \\ 
+				\hline
+			\end{tabular}
+			\newline
+        \end{multicols}
+
+        I only trained my perceptrons for one epoch, which on average is half the training of the original experiment.  This did not have any noticable
+        affect on my data.  I believe this is due to using stochastic gradient decent.  I have implemented batch gradient decent before, it was much slower
+        that stochastic.
+    \pagebreak
+    \section*{Experiment 4}
+		\begin{tabular}{ | c || r | r | r |}
+			\hline
+			 Perceptron & Epochs & Testing Accuracy \\ 
+			 9 vs 0 & 2 & 97 \\ 
+			\hline
+			 9 vs 1 & 2 & 98 \\ 
+			\hline
+			 9 vs 2 & 2 & 99 \\ 
+			\hline
+			 9 vs 3 & 2 & 98 \\ 
+			\hline
+			 9 vs 4 & 2 & 96 \\ 
+			\hline
+			 9 vs 5 & 3 & 93 \\ 
+			\hline
+			 9 vs 6 & 2 & 99 \\ 
+			\hline
+			 9 vs 7 & 2 & 98 \\ 
+			\hline
+			 9 vs 8 & 2 & 94 \\ 
+			\hline
+			 9 vs 9 & 1 & 88 \\ 
+			\hline
+		\end{tabular}
+
+
+		\begin{multicols}{3}
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 0 \\ 
+				\hline
+				9 & 172 & 0 \\ 
+				\hline
+				0 & 8 & 178 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 1 \\ 
+				\hline
+				9 & 180 & 5 \\ 
+				\hline
+				1 & 0 & 177 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 2 \\ 
+				\hline
+				9 & 179 & 0 \\ 
+				\hline
+				2 & 1 & 177 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 3 \\ 
+				\hline
+				9 & 176 & 1 \\ 
+				\hline
+				3 & 4 & 182 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 4 \\ 
+				\hline
+				9 & 167 & 0 \\ 
+				\hline
+				4 & 13 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 5 \\ 
+				\hline
+				9 & 157 & 0 \\ 
+				\hline
+				5 & 23 & 182 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 6 \\ 
+				\hline
+				9 & 178 & 0 \\ 
+				\hline
+				6 & 2 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 7 \\ 
+				\hline
+				9 & 179 & 6 \\ 
+				\hline
+				7 & 1 & 173 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 8 \\ 
+				\hline
+				9 & 159 & 0 \\ 
+				\hline
+				8 & 21 & 174 \\ 
+				\hline
+			\end{tabular}
+			\newline
+           
+        \end{multicols}
+        There was not much change in the output. The gradient decent algorith took a little bit less time to converge.  I'm sure that if I raised it more that
+        that it would actually diverge.
+    \pagebreak
+    \section*{Experiment 5}
+        
+		\begin{tabular}{ | c || r | r | r |}
+			\hline
+			 Perceptron & Epochs & Testing Accuracy \\ 
+			 9 vs 0 & 2 & 100 \\ 
+			\hline
+			 9 vs 1 & 2 & 80 \\ 
+			\hline
+			 9 vs 2 & 2 & 100 \\ 
+			\hline
+			 9 vs 3 & 2 & 99 \\ 
+			\hline
+			 9 vs 4 & 2 & 90 \\ 
+			\hline
+			 9 vs 5 & 2 & 89 \\ 
+			\hline
+			 9 vs 6 & 2 & 100 \\ 
+			\hline
+			 9 vs 7 & 2 & 97 \\ 
+			\hline
+			 9 vs 8 & 2 & 94 \\ 
+			\hline
+			 9 vs 9 & 1 & 91 \\ 
+			\hline
+		\end{tabular}
+
+
+		\begin{multicols}{3}
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 0 \\ 
+				\hline
+				9 & 180 & 0 \\ 
+				\hline
+				0 & 0 & 178 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 1 \\ 
+				\hline
+				9 & 180 & 72 \\ 
+				\hline
+				1 & 0 & 110 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 2 \\ 
+				\hline
+				9 & 180 & 0 \\ 
+				\hline
+				2 & 0 & 177 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 3 \\ 
+				\hline
+				9 & 178 & 1 \\ 
+				\hline
+				3 & 2 & 182 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 4 \\ 
+				\hline
+				9 & 146 & 0 \\ 
+				\hline
+				4 & 34 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 5 \\ 
+				\hline
+				9 & 141 & 0 \\ 
+				\hline
+				5 & 39 & 182 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 6 \\ 
+				\hline
+				9 & 180 & 0 \\ 
+				\hline
+				6 & 0 & 181 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 7 \\ 
+				\hline
+				9 & 179 & 7 \\ 
+				\hline
+				7 & 1 & 172 \\ 
+				\hline
+			\end{tabular}
+			\newline
+
+
+			\begin{tabular}{| c | c | c |}
+				\hline
+				& 9 & 8 \\ 
+				\hline
+				9 & 164 & 3 \\ 
+				\hline
+				8 & 16 & 171 \\ 
+				\hline
+			\end{tabular}
+			\newline
+              
+        \end{multicols}
+    There is a slight reduction in accuracy.  
+\end{document}
